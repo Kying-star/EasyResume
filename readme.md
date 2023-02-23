@@ -1,4 +1,4 @@
-# 简历模板渲染器
+# 简历模板渲染器 easy resume
 
 ## 技术栈
 
@@ -21,3 +21,9 @@ https://github.com/coderming/resume
 ## 特别鸣谢
 
 @chatgpt
+
+## TODO
+
+- [x] code -> tree
+- [ ] tree -- resume-render --> resume
+- [ ] extend template

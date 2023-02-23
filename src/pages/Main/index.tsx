@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { baseData } from "../../data/copy";
+import { baseData } from "../../data/index";
 import { Render } from "../Render";
 import { Studio } from "../Studio";
 import "./index.less";

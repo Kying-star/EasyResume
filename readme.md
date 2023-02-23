@@ -4,6 +4,7 @@
 
 - markdown-it
 - react-pdf
+- monaco-editor
 
 ## 模版支持
 
@@ -16,3 +17,7 @@ https://github.com/coderming/resume
 ## 架构图
 
 ![](./public/Architecture.png)
+
+## 特别鸣谢
+
+@chatgpt

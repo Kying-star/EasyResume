@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Studio from "./pages/Studio";
-import "./index.less";
+import { Main } from "./pages/Main";
+import "./main.less";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Studio />
+    <Main />
   </React.StrictMode>
 );

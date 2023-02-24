@@ -3,6 +3,7 @@ import { parseTree } from "./utils";
 import "./index.less";
 import { H } from "../../components/Template/components/components/components";
 import { Table } from "../../components/Template/components/components/Table";
+import { Common } from "../../components/Template/components";
 type Props = {
   code: string;
 };
@@ -21,7 +22,9 @@ export const Render: React.FC<Props> = (props: Props) => {
 
   return (
     <>
-      <div className="render"></div>
+      <div className="render">
+        <Common />
+      </div>
     </>
   );
 };

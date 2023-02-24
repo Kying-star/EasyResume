@@ -1,11 +1,15 @@
 import { useEffect } from "react";
-import { baseData } from "../../data/copy";
 import { parseTree } from "./utils";
+import "./index.less";
+import { H } from "../../components/Template/components/components/components";
+import { Table } from "../../components/Template/components/components/Table";
 type Props = {
   code: string;
 };
 export const Render: React.FC<Props> = (props: Props) => {
   const { code } = props;
+  const markdownSource = `| 政治 | 英语（二） | 数学（二） | 数据数据工程基础 | 总分 |\n| :--: | :--: | :--: | :--: | :--: |\n| 100  | 100         | 150       | 150             | 500  | `;
+
   // resolve code -> obj
   useEffect(() => {
     try {
@@ -15,5 +19,9 @@ export const Render: React.FC<Props> = (props: Props) => {
     }
   }, [code]);
 
-  return <></>;
+  return (
+    <>
+      <div className="render"></div>
+    </>
+  );
 };

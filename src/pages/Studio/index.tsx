@@ -22,7 +22,7 @@ export const Studio: React.FC<Props> = (props: Props) => {
     setWidth(document.body.clientWidth / 2);
   });
   return (
-    <div className="Studio">
+    <div className="studio">
       <MonacoEditor
         width={width}
         height={height}

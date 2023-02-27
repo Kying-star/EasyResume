@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { parseTree } from "./utils";
 import "./index.less";
-import { H } from "../../components/Template/components/components/components";
+import { H } from "../../components/Template/components/components/H";
 import { Table } from "../../components/Template/components/components/Table";
 import { Common } from "../../components/Template/components";
 type Props = {

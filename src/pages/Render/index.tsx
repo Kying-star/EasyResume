@@ -1,20 +1,31 @@
-import { useEffect } from "react";
-import { parseTree } from "./utils";
+import { useEffect, useState } from "react";
+import { configResolver, contentResolver, parseTree } from "./utils";
 import "./index.less";
 import { H } from "../../components/Template/components/components/H";
 import { Table } from "../../components/Template/components/components/Table";
 import { Common } from "../../components/Template/components";
+import { baseData } from "../../data";
+import { Config, SectionType } from "../../types";
 type Props = {
   code: string;
 };
+
 export const Render: React.FC<Props> = (props: Props) => {
   const { code } = props;
-  const markdownSource = `| 政治 | 英语（二） | 数学（二） | 数据数据工程基础 | 总分 |\n| :--: | :--: | :--: | :--: | :--: |\n| 100  | 100         | 150       | 150             | 500  | `;
+  const [config, setConfig] = useState<Config>({
+    name: "string",
+    github: "string",
+    profiles: ["string", "[]"],
+    contacts: ["string", "[]"],
+  });
 
+  const [sections, setSections] = useState<SectionType[]>([]);
   // resolve code -> obj
   useEffect(() => {
     try {
-      // console.log(JSON.stringify(parseTree(baseData)));
+      let treeData = parseTree(baseData);
+      setConfig(configResolver(treeData.children[0]));
+      setSections(contentResolver(treeData.children[1]) as SectionType[]);
     } catch (error) {
       console.log(error);
     }
@@ -23,7 +34,7 @@ export const Render: React.FC<Props> = (props: Props) => {
   return (
     <>
       <div className="render">
-        <Common />
+        <Common config={config} sections={sections} />
       </div>
     </>
   );

@@ -3,13 +3,13 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import "./index.less";
 type Props = {
-  source: string[];
+  source?: string[];
 };
 
 export const P: React.FC<Props> = ({ source }) => {
   return (
     <div className="p-space">
-      {source.map((e) => (
+      {source?.map((e) => (
         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{e}</ReactMarkdown>
       ))}
     </div>

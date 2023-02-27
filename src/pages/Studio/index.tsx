@@ -20,7 +20,7 @@ export const Studio: React.FC<Props> = (props: Props) => {
     // console.log(document.body.clientWidth, document.body.clientHeight);
     setHeight(document.body.clientHeight);
     setWidth(document.body.clientWidth / 2);
-  });
+  }, []);
   return (
     <div className="studio">
       <MonacoEditor
@@ -32,7 +32,7 @@ export const Studio: React.FC<Props> = (props: Props) => {
         options={options}
         onChange={(code) => {
           setCode(code);
-          // console.log(code);
+          console.log(code);
         }}
       />
     </div>

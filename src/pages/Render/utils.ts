@@ -1,3 +1,5 @@
+import { Config, SectionType } from "../../types";
+
 interface TreeNode {
     name: string;
     children: TreeNode[];
@@ -33,4 +35,66 @@ interface TreeNode {
     }
     return root;
   }
+
+  export function treeResolver(root: TreeNode){
+    if(root === null){
+        return
+    }
+    for(let i = 0; i < root.children.length; i++){
+        if(root.children[i].name === 'config'){
+            configResolver(root.children[i])
+        }
+        if(root.children[i].name === 'content'){
+            contentResolver(root.children[i])
+        }
+    }   
+  }
   
+  export function configResolver(config : TreeNode) {
+    let resolvedConfig : any = {}
+    if(config === null){
+        return
+    }
+    for(let i = 0 ; i < config.children.length ; i++){
+        let key = config.children[i].name.split(' ')[0]
+        let value = config.children[i].name.split(' ')[1]
+        if(config.children[i].children.length === 0){
+           resolvedConfig[key] = value 
+        }else{
+            resolvedConfig[key] = config.children[i].children.map(e =>e. name) 
+        }
+        
+    }
+    return resolvedConfig
+  }
+
+  export function contentResolver(content : TreeNode){
+    let resolvedContent : any[] = []
+    if(content === null){
+        return
+    }
+    for(let i = 0 ; i < content.children.length ; i++){
+        let section : any = {
+            title : '',
+            tableList : [],
+            pList : [],
+            hList :[]
+        }
+        let key = content.children[i].name.split(' ')[0]
+        let value = content.children[i].name.split(' ')[1]
+        section[key] = value
+        for(let j = 0 ; j < content.children[i].children.length ; j++){
+            if(content.children[i].children[j].name === 'table'){
+                section.tableList?.push(content.children[i].children[j].children?.map((e: { name: string; }) => e.name))
+            }
+            if(content.children[i]?.children[j].name === 'p'){
+                section.pList.push(content.children[i].children[j].children?.map((e: { name: string; }) => e.name))
+            }
+            if(content.children[i]?.children[j].name === 'h'){
+                section.pList.push(content.children[i].children[j].children?.map((e: { name: string; }) => e.name))
+            }
+        }
+        resolvedContent.push(section)
+    }
+    return resolvedContent
+  }

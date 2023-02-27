@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { configResolver, contentResolver, parseTree } from "./utils";
 import "./index.less";
-import { H } from "../../components/Template/components/components/H";
-import { Table } from "../../components/Template/components/components/Table";
-import { Common } from "../../components/Template/components";
+import { H } from "../../components/Template/Common/components/H";
+import { Table } from "../../components/Template/Common/components/Table";
+import { Common } from "../../components/Template/Common";
 import { baseData } from "../../data";
 import { Config, SectionType } from "../../types";
 type Props = {

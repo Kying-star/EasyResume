@@ -13,19 +13,20 @@ type Props = {
 export const Render: React.FC<Props> = (props: Props) => {
   const { code } = props;
   const [config, setConfig] = useState<Config>({
-    name: "string",
-    github: "string",
-    profiles: ["string", "[]"],
-    contacts: ["string", "[]"],
+    name: "",
+    github: "",
+    profiles: [],
+    contacts: [],
   });
 
   const [sections, setSections] = useState<SectionType[]>([]);
   // resolve code -> obj
   useEffect(() => {
     try {
-      let treeData = parseTree(baseData);
+      let treeData = parseTree(code);
       setConfig(configResolver(treeData.children[0]));
       setSections(contentResolver(treeData.children[1]) as SectionType[]);
+      console.log(contentResolver(treeData.children[1]));
     } catch (error) {
       console.log(error);
     }

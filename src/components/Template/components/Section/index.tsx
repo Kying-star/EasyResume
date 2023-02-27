@@ -15,12 +15,17 @@ export const Section: React.FC<Props> = ({ sections }) => {
           <div className="item" key={section.title}>
             <Title title={section.title} />
             <div className="si-p">
-              {section.hList?.map((item) => {
-                return <H source={item} />;
+              {section.childList?.map((item) => {
+                if (item.name === "p") {
+                  return <P source={item.value} />;
+                }
+                if (item.name === "h") {
+                  return <H source={item.value} />;
+                }
               })}
-              {section.pList?.map((item) => {
+              {/* {section.pList?.map((item) => {
                 return <P source={item} />;
-              })}
+              })} */}
               <Table tableCode={section.tableList} />
             </div>
           </div>

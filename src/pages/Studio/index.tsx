@@ -32,7 +32,7 @@ export const Studio: React.FC<Props> = (props: Props) => {
         options={options}
         onChange={(code) => {
           setCode(code);
-          console.log(code);
+          // console.log(code);
         }}
       />
     </div>

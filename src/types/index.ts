@@ -1,7 +1,6 @@
 export type SectionType = {
   title: string;
-  hList?: string[][];
-  pList?: string[][];
+  childList : ChildList[]
   tableList? : string[];
 };
 
@@ -16,3 +15,8 @@ export type Config = {
   description?: string;
   printName?: string;
 };
+
+type ChildList = {
+  name: string;
+  value: string[];
+}

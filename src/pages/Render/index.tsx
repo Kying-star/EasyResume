@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { configResolver, contentResolver, parseTree } from "./utils";
+
 import "./index.less";
 import { H } from "../../components/Template/Common/components/H";
 import { Table } from "../../components/Template/Common/components/Table";
 import { Common } from "../../components/Template/Common";
 import { baseData } from "../../data";
 import { Config, SectionType } from "../../types";
+import { parseTree, configResolver, contentResolver } from "./utils";
+
 type Props = {
   code: string;
 };

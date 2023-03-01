@@ -60,9 +60,18 @@ export function configResolver(config: TreeNode) {
     if (config.children[i].children.length === 0) {
       resolvedConfig[key] = value;
     } else {
-      resolvedConfig[key] = config.children[i].children.map((e) => e.name);
+      if(key === 'contacts'){
+        resolvedConfig[key] = config.children[i].children.map((e) => ({
+          name : e.name.split(" ")[0],
+          value : e.name.split(" ")[1]
+        }));
+      }else{
+        resolvedConfig[key] = config.children[i].children.map((e) => e.name);
+      }
+      
     }
   }
+  console.log(resolvedConfig);
   return resolvedConfig;
 }
 

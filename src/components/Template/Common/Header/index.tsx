@@ -2,11 +2,27 @@ import "./index.less";
 import pic from "../../../../assets/common/pic.jpg";
 import { Config } from "../../../../types/index";
 import githubLogo from "../../../../assets/github.svg";
+import email from "../../../../assets/email.svg";
+import tell from "../../../../assets/tell.svg";
+import home from "../../../../assets/home.svg";
 type Props = {
   config: Config;
 };
 export const Header: React.FC<Props> = (props: Props) => {
   const { name, github, profiles, contacts } = props.config;
+
+  const iconRender = (icon: string) => {
+    switch (icon) {
+      case "mail":
+        return <img src={email} alt="" />;
+      case "tell":
+        return <img src={tell} alt="" />;
+      case "blog":
+        return <img src={home} alt="" />;
+      default:
+        return "";
+    }
+  };
   return (
     <div className="header">
       <div className="pic">
@@ -32,8 +48,9 @@ export const Header: React.FC<Props> = (props: Props) => {
           </div>
           <div className="tb-right">
             {contacts.map((contact: any) => (
-              <div key={contact} className="tbr-item">
-                {contact}
+              <div key={contact.value} className="tbr-item">
+                {contact.value}
+                {iconRender(contact.name)}
               </div>
             ))}
           </div>

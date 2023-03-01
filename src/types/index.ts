@@ -8,7 +8,7 @@ export type Config = {
   name: string;
   github: string;
   profiles: string[];
-  contacts: string[];
+  contacts: ChildList[];
   weChatQrCode?: boolean;
   showWeChatQrCodeInHTML?: boolean;
   docName?: string;

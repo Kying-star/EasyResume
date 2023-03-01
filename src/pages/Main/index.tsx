@@ -5,11 +5,17 @@ import { Studio } from "../Studio";
 import "./index.less";
 export const Main = () => {
   const [code, setCode] = useState<string>(baseData);
+  const [isShowStudio, setIsShowStudio] = useState(true);
+
   return (
     <>
       <div className={"main-container"}>
-        <Studio code={code} setCode={setCode}></Studio>
-        <Render code={code}></Render>
+        {isShowStudio ? <Studio code={code} setCode={setCode}></Studio> : <></>}
+        <Render
+          code={code}
+          studioShow={isShowStudio}
+          setStudioShow={setIsShowStudio}
+        ></Render>
       </div>
     </>
   );

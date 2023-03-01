@@ -1,4 +1,4 @@
-# 简历模板渲染器 easy resume
+# 简单的简历 Easy Resume
 
 ## 技术栈
 

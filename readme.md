@@ -27,4 +27,4 @@ https://github.com/coderming/resume
 - [x] code -> tree
 - [x] tree -- resume-render --> resume
 - [ ] extend template
-- [ ] add provideCompletionItems
+- [x] add provideCompletionItems

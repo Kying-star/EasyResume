@@ -19,7 +19,7 @@ export const Studio: React.FC<Props> = (props: Props) => {
   useEffect(() => {
     // console.log(document.body.clientWidth, document.body.clientHeight);
     setHeight(document.body.clientHeight);
-    setWidth(document.body.clientWidth - 1024);
+    setWidth(document.body.clientWidth / 2);
   }, []);
   return (
     <div className="studio">

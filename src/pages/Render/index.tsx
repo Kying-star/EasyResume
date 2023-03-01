@@ -48,7 +48,11 @@ export const Render: React.FC<Props> = (props: Props) => {
     HTMLDivElement,
     { children: React.ReactNode }
   >((props, ref) => {
-    return <div ref={ref}>{props.children}</div>;
+    return (
+      <div className="resume-container" ref={ref}>
+        {props.children}
+      </div>
+    );
   });
 
   return (

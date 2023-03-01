@@ -1,5 +1,9 @@
 # 简单的简历 Easy Resume
 
+## demo show
+
+![](./public/demo.gif)
+
 ## 技术栈
 
 - markdown-it

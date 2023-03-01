@@ -1,4 +1,4 @@
-# 简单的简历 Easy Resume
+# Easy Resume
 
 ## demo show
 

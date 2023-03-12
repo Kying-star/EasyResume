@@ -30,5 +30,6 @@ https://github.com/coderming/resume
 
 - [x] code -> tree
 - [x] tree -- resume-render --> resume
-- [ ] extend template
+- [ ] extend Single column template
 - [x] add provideCompletionItems
+- [ ] add Local Storage

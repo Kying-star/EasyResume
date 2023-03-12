@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import "./index.less";
 import { Common } from "../../components/Template/Common";
@@ -61,6 +61,8 @@ export const Render: React.FC<Props> = (props: Props) => {
         className="render"
         style={{
           fontFamily: commonFontFamily,
+          width: `31.5cm`,
+          height: `44cm`,
         }}
       >
         <PrintableContent ref={printableRef}>

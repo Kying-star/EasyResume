@@ -5,7 +5,7 @@ import { Studio } from "../Studio";
 import "./index.less";
 export const Main = () => {
   const [code, setCode] = useState<string>(baseData);
-  const [isShowStudio, setIsShowStudio] = useState(true);
+  const [isShowStudio, setIsShowStudio] = useState(false);
 
   return (
     <>

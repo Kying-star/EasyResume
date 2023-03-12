@@ -9,8 +9,10 @@ type Props = {
 export const H: React.FC<Props> = ({ source }) => {
   return (
     <div className="h-space">
-      {source?.map((e) => (
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{"#### " + e}</ReactMarkdown>
+      {source?.map((e, index) => (
+        <ReactMarkdown key={`${e}${index}`} rehypePlugins={[rehypeRaw]}>
+          {"#### " + e}
+        </ReactMarkdown>
       ))}
     </div>
   );

@@ -12,7 +12,7 @@
 
 ## 模版支持
 
-- Common https://github.com/sarailQAQ/cv
+- Common https://github.com/Kying-star/cv
 
 ## 创意来自
 

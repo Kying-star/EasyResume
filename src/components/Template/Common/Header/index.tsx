@@ -40,14 +40,14 @@ export const Header: React.FC<Props> = (props: Props) => {
         </div>
         <div className="tit-button">
           <div className="tb-left">
-            {profiles.map((profile: any) => (
+            {profiles?.map((profile: any) => (
               <h3 key={profile} className="tbl-item">
                 {profile}
               </h3>
             ))}
           </div>
           <div className="tb-right">
-            {contacts.map((contact: any) => (
+            {contacts?.map((contact: any) => (
               <div key={contact.value} className="tbr-item">
                 {contact.value}
                 {iconRender(contact.name)}

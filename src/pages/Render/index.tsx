@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-
 import "./index.less";
 import { Common } from "../../components/Template/Common";
 import { Config, SectionType } from "../../types";
@@ -8,19 +7,25 @@ import { useReactToPrint } from "react-to-print";
 import React from "react";
 import { commonFontFamily } from "../../styles";
 import { FloatButton } from "antd";
+import { useRecoilValue } from "recoil";
 import {
   MenuOutlined,
   PrinterOutlined,
   CodepenOutlined,
+  ControlOutlined,
 } from "@ant-design/icons";
+import { textState } from "../../data/store";
 type Props = {
   code: string;
   studioShow: boolean;
   setStudioShow: (showState: boolean) => void;
+  consoleShow: boolean;
+  setConsoleShow: (showState: boolean) => void;
 };
 
 export const Render: React.FC<Props> = (props: Props) => {
-  const { code, setStudioShow, studioShow } = props;
+  const { code, setStudioShow, studioShow, consoleShow, setConsoleShow } =
+    props;
   const [config, setConfig] = useState<Config>({
     name: "",
     github: "",
@@ -29,6 +34,7 @@ export const Render: React.FC<Props> = (props: Props) => {
   });
   const [sections, setSections] = useState<SectionType[]>([]);
   const printableRef = useRef<HTMLDivElement>(null);
+  const text = useRecoilValue(textState);
   const handlePrint = useReactToPrint({
     content: () => printableRef.current,
   });
@@ -79,6 +85,10 @@ export const Render: React.FC<Props> = (props: Props) => {
         <FloatButton
           icon={<CodepenOutlined />}
           onClick={() => setStudioShow(!studioShow)}
+        />
+        <FloatButton
+          icon={<ControlOutlined />}
+          onClick={() => setConsoleShow(!consoleShow)}
         />
       </FloatButton.Group>
     </>

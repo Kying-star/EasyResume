@@ -5,12 +5,14 @@ import githubLogo from "../../../../assets/github.svg";
 import email from "../../../../assets/email.svg";
 import tell from "../../../../assets/tell.svg";
 import home from "../../../../assets/home.svg";
+import { useRecoilValue } from "recoil";
+import { ShowPic } from "../../../../data/store";
 type Props = {
   config: Config;
 };
 export const Header: React.FC<Props> = (props: Props) => {
   const { name, github, profiles, contacts } = props.config;
-
+  const isShowPic = useRecoilValue(ShowPic);
   const iconRender = (icon: string) => {
     switch (icon) {
       case "mail":
@@ -25,9 +27,11 @@ export const Header: React.FC<Props> = (props: Props) => {
   };
   return (
     <div className="header">
-      <div className="pic">
-        <img src={pic} alt="" />
-      </div>
+      {isShowPic && (
+        <div className="pic">
+          <img src={pic} alt="" />
+        </div>
+      )}
       <div className="tit">
         <div className="tit-top">
           <h1>{name}</h1>
@@ -36,7 +40,6 @@ export const Header: React.FC<Props> = (props: Props) => {
             <img src={githubLogo} alt="github logo" />
             <span className="tit-top-github">{github}</span>
           </a>
-          {/* <a className="tit-top-name">{github}</a> */}
         </div>
         <div className="tit-button">
           <div className="tb-left">

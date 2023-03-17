@@ -14,7 +14,7 @@ import {
   CodepenOutlined,
   ControlOutlined,
 } from "@ant-design/icons";
-import { textState } from "../../data/store";
+import { resumeHeight, resumeWidth } from "../../data/store";
 type Props = {
   code: string;
   studioShow: boolean;
@@ -33,8 +33,9 @@ export const Render: React.FC<Props> = (props: Props) => {
     contacts: [],
   });
   const [sections, setSections] = useState<SectionType[]>([]);
+  const _resumeHeight = useRecoilValue(resumeHeight);
+  const _resumeWidth = useRecoilValue(resumeWidth);
   const printableRef = useRef<HTMLDivElement>(null);
-  const text = useRecoilValue(textState);
   const handlePrint = useReactToPrint({
     content: () => printableRef.current,
   });
@@ -67,8 +68,8 @@ export const Render: React.FC<Props> = (props: Props) => {
         className="render"
         style={{
           fontFamily: commonFontFamily,
-          width: `31.5cm`,
-          height: `44cm`,
+          width: _resumeWidth,
+          height: _resumeHeight,
         }}
       >
         <PrintableContent ref={printableRef}>

@@ -1,12 +1,37 @@
-import {
-    RecoilRoot,
-    atom,
-    selector,
-    useRecoilState,
-    useRecoilValue,
-  } from 'recoil';
+import { atom } from 'recoil';
+import { a4Height, a4Width, columnCount, commonColor, commonFontFamily, commonFontSize, isShowPic } from '../styles';
 
-export const textState = atom({
-    key: 'textState', // unique ID (with respect to other atoms/selectors)
-    default: 14, // default value (aka initial value)
+export const fontSize = atom({
+    key: 'fontSize', 
+    default: commonFontSize,
   });
+
+export const fontFamily = atom({
+  key: 'fontFamily',
+  default: commonFontFamily
+})
+
+export const resumeHeight = atom({
+  key: 'resumeHeight',
+  default: a4Height
+})
+
+export const resumeWidth = atom({
+  key: 'resumeWidth',
+  default: a4Width
+})
+
+export const commonFontColor = atom({
+  key: 'commonFontColor',
+  default: commonColor
+})
+
+export const commonColumnCount = atom({
+  key: 'columnCount',
+  default: columnCount
+})
+
+export const ShowPic = atom({
+  key: 'showPick',
+  default: isShowPic
+})

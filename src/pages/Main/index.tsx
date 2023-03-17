@@ -1,8 +1,6 @@
 import { Drawer } from "antd";
 import { useEffect, useState } from "react";
-import { useRecoilState, RecoilRoot, atom } from "recoil";
 import { baseData } from "../../data/index";
-import { textState } from "../../data/store";
 import { Console } from "../Console";
 import { Render } from "../Render";
 import { Studio } from "../Studio";

@@ -1,5 +1,20 @@
 # Easy Resume
 
+## how to use
+
+- docker
+
+```
+bash deploy.sh
+```
+
+- or pnpm
+
+```
+pnpm i
+pnpm run dev
+```
+
 ## demo show
 
 ![](./public/demo.gif)

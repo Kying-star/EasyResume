@@ -1,17 +1,26 @@
 FROM node:16.19.1
 
+
+# 设置工作目录
 WORKDIR /app
 
-COPY package.json ./
-COPY pnpm-lock.yaml ./
+# 复制 package.json 和 pnpm-lock.yaml 文件
+COPY package.json pnpm-lock.yaml ./
 
-RUN npm install -g pnpm@6.14.0
-RUN pnpm install
+# 安装依赖
+RUN npm install -g pnpm && pnpm install
 
-RUN pnpm install esbuild@0.17.12 --save-dev
-
+# 复制项目文件
 COPY . .
 
-EXPOSE 3000
+# 构建应用
+RUN pnpm run build
 
-CMD ["pnpm", "run", "dev"]
+# 设置环境变量
+ENV NODE_ENV production
+
+# 暴露端口
+EXPOSE 4173
+
+# 启动应用
+CMD ["npm", "run", "preview"]

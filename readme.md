@@ -19,26 +19,26 @@ pnpm run dev
 
 ![](./public/demo.gif)
 
-## 技术栈
+## technology stack
 
 - markdown-it
 - react-pdf
 - monaco-editor
 - recoil
 
-## 模版支持
+## template support
 
 - Common https://github.com/Kying-star/cv
 
-## 创意来自
+## Inspired by
 
 https://github.com/coderming/resume
 
-## 架构图
+## architecture diagram
 
 ![](./public/Architecture.png)
 
-## 特别鸣谢
+## Special thanks to
 
 @chatgpt
 

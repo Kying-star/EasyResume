@@ -24,6 +24,7 @@ pnpm run dev
 - markdown-it
 - react-pdf
 - monaco-editor
+- recoil
 
 ## 模版支持
 

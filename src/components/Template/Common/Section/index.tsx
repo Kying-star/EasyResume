@@ -5,12 +5,13 @@ import { Table } from "../components/Table";
 import { Title } from "../components/Title";
 import { useRecoilValue } from "recoil";
 import "./index.less";
-import { commonColumnCount } from "../../../../data/store";
+import { commonColumnCount, fontSize } from "../../../../data/store";
 type Props = {
   sections: SectionType[];
 };
 export const Section: React.FC<Props> = ({ sections }) => {
   const _columnCount = useRecoilValue(commonColumnCount);
+  const _fontSize = useRecoilValue(fontSize);
   return (
     <div
       className="section"
@@ -22,7 +23,12 @@ export const Section: React.FC<Props> = ({ sections }) => {
         return (
           <div className="item" key={`${section.title}${index}`}>
             <Title title={section.title} />
-            <div className="si-p">
+            <div
+              className="si-p"
+              style={{
+                fontSize: `${_fontSize}px`,
+              }}
+            >
               {section.childList?.map((item) => {
                 if (item.name === "p") {
                   return <P key={`${item.value}`} source={item.value} />;

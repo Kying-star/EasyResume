@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { a4Height, a4Width, columnCount, commonColor, commonFontFamily, commonFontSize, isShowPic } from '../styles';
+import { a4Height, a4Width, columnCount, commonColor, commonFontFamily, commonFontSize, isShowPic, commonTitleFontSize } from '../styles';
 
 export const fontSize = atom({
     key: 'fontSize', 
@@ -34,4 +34,9 @@ export const commonColumnCount = atom({
 export const ShowPic = atom({
   key: 'showPick',
   default: isShowPic
+})
+
+export const TitleFontSize = atom({
+  key: 'titleFontSize',
+  default: commonTitleFontSize
 })

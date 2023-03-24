@@ -8,9 +8,11 @@ import {
   resumeHeight,
   resumeWidth,
   ShowPic,
+  TitleFontSize,
 } from "../../data/store";
 import { ConsoleLine } from "./ConsoleLine";
 export const Console = () => {
+  const [_titleFontSize, setTitleFontSize] = useRecoilState(TitleFontSize);
   const [_fontSize, setFontSize] = useRecoilState(fontSize);
   const [_fontFamily, setFontFamily] = useRecoilState(fontFamily);
   const [_resumeHeight, setResumeHeight] = useRecoilState(resumeHeight);
@@ -19,13 +21,23 @@ export const Console = () => {
   const [_showPic, setShowPic] = useRecoilState(ShowPic);
   return (
     <div className="console-main">
+      <ConsoleLine configName={"title fontSize"}>
+        <InputNumber
+          min={1}
+          max={30}
+          defaultValue={_titleFontSize}
+          onChange={(value) => {
+            setTitleFontSize(value ?? _titleFontSize);
+          }}
+        />
+      </ConsoleLine>
       <ConsoleLine configName={"fontSize"}>
         <InputNumber
           min={1}
           max={30}
           defaultValue={_fontSize}
           onChange={(value) => {
-            setFontSize(value ?? 14);
+            setFontSize(value ?? _fontSize);
           }}
         />
       </ConsoleLine>

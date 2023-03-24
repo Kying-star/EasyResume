@@ -1,3 +1,5 @@
+export const commonTitleFontSize = 24
+
 export const commonFontSize = 15.6
 
 export const a4Height = `${44}cm`

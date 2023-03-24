@@ -10,7 +10,7 @@
 
 # Easy Resume
 
-## how to use
+## How to use
 
 - docker
 
@@ -25,18 +25,18 @@ pnpm i
 pnpm run dev
 ```
 
-## demo show
+## Demo show
 
 ![](./public/demo.gif)
 
-## technology stack
+## Technology stack
 
 - markdown-it
 - react-pdf
 - monaco-editor
 - recoil
 
-## template support
+## Template support
 
 - Common https://github.com/Kying-star/cv
 
@@ -44,7 +44,7 @@ pnpm run dev
 
 https://github.com/coderming/resume
 
-## architecture diagram
+## Architecture diagram
 
 ![](./public/Architecture.png)
 
@@ -59,3 +59,7 @@ https://github.com/coderming/resume
 - [x] extend Single column template
 - [x] add provideCompletionItems
 - [x] add Local Storage
+
+## License
+
+[MIT.](https://github.com/vitejs/vite#:~:text=License-,MIT,-.)

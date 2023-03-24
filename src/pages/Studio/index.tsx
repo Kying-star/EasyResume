@@ -15,6 +15,7 @@ export const Studio: React.FC<Props> = (props: Props) => {
     minimap: {
       enabled: false,
     },
+    wordWrap: "on",
   };
   useEffect(() => {
     setHeight(document.body.clientHeight);

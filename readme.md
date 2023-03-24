@@ -1,3 +1,12 @@
+<center>
+<img src='./public/logo.png' style="width:100px;">
+<br>
+
+![](https://img.shields.io/badge/npm-8.19.3-blue)
+![](https://img.shields.io/badge/node-16.19.1-green)
+
+</center>
+
 # Easy Resume
 
 ## how to use

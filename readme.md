@@ -1,11 +1,12 @@
-<a style="display:flex;  align-items: center; justify-content: center;flex-direction:column;">
+<div align=center>
 <img src='./public/logo.png' style="width:100px;">
+<br>
 <br>
 
 ![](https://img.shields.io/badge/npm-8.19.3-blue)
 ![](https://img.shields.io/badge/node-16.19.1-green)
 
-</a>
+</div>
 
 # Easy Resume
 

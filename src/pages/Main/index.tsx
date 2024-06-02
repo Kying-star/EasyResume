@@ -1,6 +1,6 @@
 import { Drawer } from "antd";
 import { useEffect, useState } from "react";
-import { baseData } from "../../data/index";
+import { baseData } from "../../../data/index";
 import { Console } from "../Console";
 import { Render } from "../Render";
 import { Studio } from "../Studio";
@@ -53,6 +53,7 @@ export const Main = () => {
         >
           <Console></Console>
         </Drawer>
+
         <Render
           code={code}
           studioShow={isShowStudio}

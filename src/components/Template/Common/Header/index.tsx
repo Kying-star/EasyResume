@@ -7,16 +7,17 @@ import email from "../../../../assets/email.svg";
 import tell from "../../../../assets/tell.svg";
 import home from "../../../../assets/home.svg";
 import { useRecoilValue } from "recoil";
-import { ShowPic } from "../../../../data/store";
 import React, { Ref, useRef, useState } from "react";
 import Cropper, { ReactCropperElement } from "react-cropper";
 import { Modal } from "antd";
+import { CommonThemeColor, ShowPic } from "../../../../store/store";
 type Props = {
   config: Config;
 };
 export const Header: React.FC<Props> = (props: Props) => {
   const { name, github, profiles, contacts } = props.config;
   const isShowPic = useRecoilValue(ShowPic);
+  const color = useRecoilValue(CommonThemeColor);
   const [image, setImage] = useState<string | undefined>();
   const [cropData, setCropData] = useState("#");
   const cropperRef = useRef<ReactCropperElement>(null);
@@ -58,7 +59,7 @@ export const Header: React.FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="header">
+    <div className="header" style={{ backgroundColor: color }}>
       {isShowPic && (
         <div className="pic" onClick={() => setIsPicModalOpen(true)}>
           <img src={cropData === "#" ? pic : cropData} alt="" />

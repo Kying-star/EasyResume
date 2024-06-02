@@ -6,15 +6,11 @@ import { parseTree, configResolver, contentResolver } from "./utils";
 import { useReactToPrint } from "react-to-print";
 import React from "react";
 import { commonFontFamily } from "../../styles";
-import { FloatButton } from "antd";
+
 import { useRecoilValue } from "recoil";
-import {
-  MenuOutlined,
-  PrinterOutlined,
-  CodepenOutlined,
-  ControlOutlined,
-} from "@ant-design/icons";
-import { resumeHeight, resumeWidth } from "../../data/store";
+
+import Options from "../../components/Options";
+import { resumeHeight, resumeWidth } from "../../store/store";
 type Props = {
   code: string;
   studioShow: boolean;
@@ -45,7 +41,6 @@ export const Render: React.FC<Props> = (props: Props) => {
       let treeData = parseTree(code);
       setConfig(configResolver(treeData.children[0]));
       setSections(contentResolver(treeData.children[1]) as SectionType[]);
-      console.log(config);
     } catch (error) {
       console.log(error);
     }
@@ -64,6 +59,13 @@ export const Render: React.FC<Props> = (props: Props) => {
 
   return (
     <>
+      <Options
+        handlePrint={handlePrint}
+        setStudioShow={setStudioShow}
+        studioShow={studioShow}
+        setConsoleShow={setConsoleShow}
+        consoleShow={consoleShow}
+      />
       <div
         className="render"
         style={{
@@ -76,7 +78,7 @@ export const Render: React.FC<Props> = (props: Props) => {
           <Common config={config} sections={sections} />
         </PrintableContent>
       </div>
-      <FloatButton.Group
+      {/* <FloatButton.Group
         trigger="hover"
         type="primary"
         style={{ right: 10 }}
@@ -91,7 +93,7 @@ export const Render: React.FC<Props> = (props: Props) => {
           icon={<ControlOutlined />}
           onClick={() => setConsoleShow(!consoleShow)}
         />
-      </FloatButton.Group>
+      </FloatButton.Group> */}
     </>
   );
 };

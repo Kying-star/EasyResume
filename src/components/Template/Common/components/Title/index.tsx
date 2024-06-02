@@ -1,5 +1,6 @@
 import { useRecoilValue } from "recoil";
-import { TitleFontSize } from "../../../../../data/store";
+import { TitleFontSize } from "../../../../../store/store";
+
 type Props = {
   title: string;
 };

@@ -1,9 +1,9 @@
-import { resumeHeight, resumeWidth } from "../../../data/store";
 import { Config, SectionType } from "../../../types";
 import { Header } from "./Header";
 import { useRecoilValue } from "recoil";
 import "./index.less";
 import { Section } from "./Section";
+import { resumeHeight, resumeWidth } from "../../../store/store";
 
 type Props = {
   config: Config;

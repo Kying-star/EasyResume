@@ -5,13 +5,19 @@ import { Table } from "../components/Table";
 import { Title } from "../components/Title";
 import { useRecoilValue } from "recoil";
 import "./index.less";
-import { commonColumnCount, fontSize } from "../../../../data/store";
+import {
+  CommonSectionThemeColor,
+  commonColumnCount,
+  fontSize,
+} from "../../../../store/store";
+
 type Props = {
   sections: SectionType[];
 };
 export const Section: React.FC<Props> = ({ sections }) => {
   const _columnCount = useRecoilValue(commonColumnCount);
   const _fontSize = useRecoilValue(fontSize);
+  const sectionColor = useRecoilValue(CommonSectionThemeColor);
   return (
     <div
       className="section"
@@ -21,7 +27,10 @@ export const Section: React.FC<Props> = ({ sections }) => {
     >
       {sections.map((section: SectionType, index) => {
         return (
-          <div className="item" key={`${section.title}${index}`}>
+          <div
+            className={`item h3-style-${sectionColor.replace(/#/, "")}`}
+            key={`${section.title}${index}`}
+          >
             <Title title={section.title} />
             <div
               className="si-p"

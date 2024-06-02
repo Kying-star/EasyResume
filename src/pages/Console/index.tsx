@@ -1,16 +1,17 @@
 import { Input, InputNumber, Radio, Switch } from "antd";
 import "./index.less";
 import { useRecoilState } from "recoil";
+
+import { ConsoleLine } from "./ConsoleLine";
 import {
-  commonColumnCount,
-  fontFamily,
+  TitleFontSize,
   fontSize,
+  fontFamily,
   resumeHeight,
   resumeWidth,
+  commonColumnCount,
   ShowPic,
-  TitleFontSize,
-} from "../../data/store";
-import { ConsoleLine } from "./ConsoleLine";
+} from "../../store/store";
 export const Console = () => {
   const [_titleFontSize, setTitleFontSize] = useRecoilState(TitleFontSize);
   const [_fontSize, setFontSize] = useRecoilState(fontSize);

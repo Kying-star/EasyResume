@@ -19,11 +19,7 @@ export const Main = () => {
 
   // effect
   useEffect(() => {
-    if (localStorage.getItem("code") === null) {
-      setCode(baseData);
-    } else {
-      setCode(localStorage.getItem("code") as string);
-    }
+    setCode(baseData);
   }, []);
 
   return (
@@ -33,6 +29,7 @@ export const Main = () => {
           size="large"
           title="Studio"
           placement="left"
+          width={1000}
           bodyStyle={{
             padding: "0",
           }}

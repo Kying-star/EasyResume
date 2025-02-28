@@ -1,7 +1,6 @@
-export const baseData = 
-`config
+export const baseData = `config
     name 洛琪希
-    github 114514
+    github 114514 123 1123123
     profiles
         男 · 2012届本科
         南山职业男子学院 · 平面物体烹饪专业
